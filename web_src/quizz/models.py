@@ -12,7 +12,8 @@ class Theme(models.Model):
 
 
 class Question(models.Model):
-    theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
+    #theme = models.ForeignKey(Theme, on_delete=models.CASCADE)
+    theme = models.ManyToManyField(Theme)
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
 
