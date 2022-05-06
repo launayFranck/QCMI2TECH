@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
+from django.contrib import admin
 
 from .views import index
 
@@ -24,3 +25,6 @@ urlpatterns = [
     path('quizz/', include("quizz.urls")),
     path('', index, name="index")
 ]
+admin.site.site_header = "Quizz pour champion"
+admin.site.site_title = "QPUC - Admin"
+admin.site.index_title = "Bienvenue sur l'interface d'administration de Quizz pour un champion !"

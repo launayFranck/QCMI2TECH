@@ -8,21 +8,6 @@ from .forms import connectForm
 
 
 def index(request):
-    users = [
-        {
-            "username": "admin1",
-            "password": "admin1"
-        },
-        {
-            "username": "admin2",
-            "password": "admin2"
-        },
-        {
-            "username": "user1",
-            "password": "user1"
-        }
-    ]
-
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -32,14 +17,14 @@ def index(request):
                             password=password)
         if user is not None:
             if not user.get_user_permissions():
-                return HttpResponse("Pas le droit")
+                return render(request, "quizz/connect_user.html")
             login(request, user)
             print(user.get_user_permissions())
             # return HttpResponse("<p>success</p>")
             # return render(request, "admin/")
             return redirect("../admin/")
         else:
-            return HttpResponse("<p>fail</p>")
+            return HttpResponse("<title>prend ton titre</title><p id='roizil'>fail</p>")
 
     #     if form.is_valid():
     #         # for user in users:
@@ -49,4 +34,4 @@ def index(request):
     #         # return HttpResponse("<p>WRONG INPUT</p>")
     # else:
     form = connectForm()
-    return render(request, "quizz/index.html", {'form': form, 'value_list': users})
+    return render(request, "quizz/index.html", {'form': form})

@@ -8,15 +8,19 @@
 <body>
     </head>
 <body>
-    <h1>QPUC</h1>
+     <div class="wrapper fadeInDown">
+        <div id="formContent">
+          <div class="fadeIn first">
+            <h1>Question pour un Champion</h1>
+          </div>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        {% for val in value_list %}
-        <p>{{ val }}</p>
-        {% endfor %}
-        <input type="submit" value="se connecter">
+        <input id="connect" type="submit" value="se connecter" class="fadeIn fourth">
     </form>
+    <div id="formFooter">
+        <a class="underlineHover" href="#">Mot de passe oublié ?</a>
+    </div>
 </body>
 <script src="{% static 'scripts/script.js'%}"></script>
 </html>
