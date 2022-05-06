@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Page accueil</h1>
+    <p>On est le {{ date|date:"l d F Y" }} il est {{ date|date:"H\h i\m\i\n s\s\e\c"}}</p>
+    <p>tristan go teams</p>
+    <a href="/admin">page admin</a>
+
+</body>
+</html>
