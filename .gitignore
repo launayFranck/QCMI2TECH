@@ -1,0 +1,8 @@
+/target/
+env/*
+.idea/*
+web_src/db.sqlite3
+web_src/qpc/__pycache__/*
+web_src/quizz/__pycache__/*
+web_src/quizz/migrations/__pycache__/*
+web_src/quizz/migrations/__pycache__/
